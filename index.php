@@ -6,13 +6,13 @@
     'cache' => false
     ));
 
-    include "connect.php";
+    include "model.php";
 
     $reponse = $bdd->prepare('SELECT * FROM movie');
     $reponse->execute();
     $results = $reponse->fetchAll();
 
-    echo $twig->render("template1.html", array(
+    echo $twig->render("indexView.html", array(
         'movies' => $results,
     ));
     
