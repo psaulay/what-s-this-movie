@@ -3,3 +3,7 @@
 Rule was : 
   -Master create a repository and initial CSV with all relative information about movies
   -Other have to add three movies in fork
+  -Add some movies to DB
+  -Export it
+  -Build two page, using MVC, ZURB
+  -Creat a PHP router
