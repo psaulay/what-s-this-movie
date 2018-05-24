@@ -27,10 +27,7 @@
                 {%for movie in movies %}
                 <div class="cell">
                     <div class="card">
-                        <img src="img/{{ movie['title'] }}.jpg">
-                        <div class="card-section">
-                            <a href="index.php?page=detail&id={{ movie['id'] }}">Consulter</a>
-                        </div>
+                        <a href="index.php?page=detail&id={{ movie['id'] }}"><img src="img/{{ movie['title'] }}.jpg"></a>
                     </div>         
                 </div>
                 {%endfor%}       

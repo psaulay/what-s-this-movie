@@ -16,12 +16,22 @@ function indexPage() {
 
 function detailPage($id) {
      $film = getMovie($id);
+     $actor = getActor($id);
+     $director = getDirector($id);
+     $gender = getGender($id);
      
      $loader = new Twig_Loader_Filesystem('templates');
-     $twig = new Twig_Environment($loader);
+     $twig = new Twig_Environment($loader, array(
+        'debug' => true,
+    ));
+    $twig->addExtension(new Twig_Extension_Debug());
 
      echo $twig->render('detail.html', array(
-          'movie' => $film
+          'movie' => $film,
+          'director' => $director,
+          'actor' => $actor,
+          'gender' => $gender,
+
      ));
 }
 
