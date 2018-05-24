@@ -1,3 +1,4 @@
+
 <?php
 require 'controlers/movie.php';
 
@@ -22,3 +23,4 @@ switch($_GET['page']) {
 //          break;
 }
 ?>
+
