@@ -1,27 +1,26 @@
 
 <?php
-    require_once __DIR__ . '/vendor/autoload.php';
-    $loader = new Twig_Loader_Filesystem('templates'); // Dossier contenant les templates
-    $twig = new Twig_Environment($loader, array(
-    'cache' => false
-    ));
+require 'controlers/movie.php';
 
-    include "model.php";
+// routeur
+switch($_GET['page']) {
 
-    $reponse = $bdd->prepare('SELECT * FROM movie');
-    $reponse->execute();
-    $results = $reponse->fetchAll();
+     case 'home':
+          indexPage();
+          break;
+     
+     case 'detail':
+          detailPage($_GET['id']);
+          break;
 
-    echo $twig->render("indexView.html", array(
-        'movies' => $results,
-    ));
-    
-    
+//     case 'detail':
+//          detailPage();
+//          break;
+//
+//     default:
+//          header('HTTP/1.0 404 Not Found');
+//          require './views/404.php';
+//          break;
+}
 ?>
 
-
-    
-
-
-
-    
